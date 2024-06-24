@@ -9,10 +9,10 @@ const io = require("socket.io")(server,{
 io.on("connection", (socket) => {
     console.log("se ha conectado un cliente")
 
-    socket.broadcast.emit("chat_message", {
-        usuario: "INFO",
-        mensaje: "Se ha conectado un nuevo usuario"
-    })
+    // socket.broadcast.emit("chat_message", {
+    //     usuario: "INFO",
+    //     mensaje: "Se ha conectado un nuevo usuario"
+    // })
 
     socket.on('typing', () => {
         socket.broadcast.emit('typing', { usuario: socket.id });
